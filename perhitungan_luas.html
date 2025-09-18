@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Perhitungan Luas - Persegi Panjang, Persegi, Segitiga</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; padding: 2rem; line-height: 1.6; }
+    pre { background:#f4f4f4; padding:1rem; border-radius:6px; }
+    .card { border:1px solid #e6e6e6; padding:1rem; border-radius:8px; box-shadow: 0 2px 6px rgba(0,0,0,0.03); }
+  </style>
+</head>
+<body>
+  <h1>Perhitungan Luas</h1>
+  <p>Menghitung luas: <strong>persegi panjang</strong>, <strong>persegi</strong>, dan <strong>segitiga</strong> menggunakan JavaScript.</p>
+
+  <div class="card">
+    <h2>Hasil</h2>
+    <div id="output"></div>
+  </div>
+
+  <script>
+    // Fungsi untuk menghitung luas persegi panjang
+    // Parameter: panjang (number), lebar (number)
+    // Mengembalikan: luas = panjang * lebar
+    function luasPersegiPanjang(panjang, lebar) {
+      return panjang * lebar;
+    }
+
+    // Fungsi untuk menghitung luas persegi
+    // Parameter: sisi (number)
+    // Mengembalikan: luas = sisi * sisi
+    function luasPersegi(sisi) {
+      return sisi * sisi;
+    }
+
+    // Fungsi untuk menghitung luas segitiga
+    // Parameter: alas (number), tinggi (number)
+    // Mengembalikan: luas = 0.5 * alas * tinggi
+    function luasSegitiga(alas, tinggi) {
+      return 0.5 * alas * tinggi;
+    }
+
+    // Gunakan let jika nilai bisa berubah; gunakan const jika nilainya tetap.
+    let panjang = 8;    // contoh: 8 satuan
+    let lebar = 5;      // contoh: 5 satuan
+
+    let sisi = 6;       // contoh sisi persegi = 6 satuan
+
+    let alas = 10;      // contoh alas segitiga = 10 satuan
+    let tinggi = 4;     // contoh tinggi segitiga = 4 satuan
+
+    // Hitung menggunakan fungsi
+    const luasPP = luasPersegiPanjang(panjang, lebar);
+    const luasP  = luasPersegi(sisi);
+    const luasSg = luasSegitiga(alas, tinggi);
+
+    // Tampilkan hasil di halaman web (elemen dengan id "output")
+    const out = document.getElementById('output');
+    out.innerHTML = `
+      <p>Luas persegi panjang (panjang=${panjang}, lebar=${lebar}) = <strong>${luasPP}</strong></p>
+      <p>Luas persegi (sisi=${sisi}) = <strong>${luasP}</strong></p>
+      <p>Luas segitiga (alas=${alas}, tinggi=${tinggi}) = <strong>${luasSg}</strong></p>
+      <pre>// Ubah nilai variabel pada bagian <code>// Contoh nilai</code> di file ini lalu refresh browser untuk melihat hasil baru.</pre>
+    `;
+
+    // Juga cetak ke console untuk debugging / demonstrasi
+    console.log('Luas persegi panjang =', luasPP);
+    console.log('Luas persegi =', luasP);
+    console.log('Luas segitiga =', luasSg);
+
+    // Jika ingin menulis langsung ke dokumen (document.write) juga bisa, namun penggunaan modern
+    // sebaiknya menggunakan DOM (mis. innerHTML) seperti contoh di atas.
+  </script>
+</body>
+</html>
